@@ -1,0 +1,27 @@
+# Ignore node_modules in both client and server
+node_modules/
+sentiment-dashboard/node_modules/
+backend/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+sentiment-dashboard/.env
+backend/.env
+
+# Build output
+sentiment-dashboard/build/
+backend/dist/
+
+# OS / editor-specific
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Misc
+*.env.local
