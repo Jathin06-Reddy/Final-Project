@@ -6,8 +6,14 @@ const axios = require('axios');
 
 console.log("API Key Loaded:", process.env.OPENAI_API_KEY ? "✅ Yes" : "❌ No");
 const app = express();
-app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+  origin: 'https://jathin-final-project.netlify.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 app.post('/api/reviews', async (req, res) => {
   const { review } = req.body;
