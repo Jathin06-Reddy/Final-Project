@@ -39,8 +39,12 @@ app.post('/api/reviews', async (req, res) => {
       }
     );
 
-    const aiReply = response.data.choices[0].message.content;
-    res.json({ sentiment: aiReply });
+    const aiReply = response.data.choices[0].message.content.trim();
+    res.json({
+      sentiment: aiReply,
+      text: review,
+      timestamp: new Date().toISOString()
+    });    
   } catch (error) {
     console.error("OpenAI API Error:", error.response?.data || error.message || error);
     res.status(500).json({ error: 'Sentiment analysis failed' });
