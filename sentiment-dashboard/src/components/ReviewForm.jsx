@@ -9,7 +9,7 @@ const ReviewForm = ({ onNewReview }) => {
     if (!text.trim()) return;
 
     try {
-      const res = await axios.post('http://localhost:3000/api/reviews', {
+      const res = await axios.post('https://final-project-ie3b.onrender.com/api/reviews', {
         review: text,
       });
       onNewReview(res.data);
